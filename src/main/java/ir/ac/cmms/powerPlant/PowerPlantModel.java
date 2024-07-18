@@ -4,7 +4,7 @@ package ir.ac.cmms.powerPlant;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="powerplant")
 public class PowerPlantModel {
 
     @Id

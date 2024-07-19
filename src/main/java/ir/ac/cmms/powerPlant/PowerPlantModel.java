@@ -1,6 +1,5 @@
 package ir.ac.cmms.powerPlant;
 
-
 import javax.persistence.*;
 
 @Entity

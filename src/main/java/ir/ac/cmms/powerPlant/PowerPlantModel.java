@@ -1,5 +1,7 @@
 package ir.ac.cmms.powerPlant;
 
+import org.hibernate.annotations.Nationalized;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,7 +12,8 @@ public class PowerPlantModel {
     @Column(precision=2)
     private int powerPlantId;
 
-    @Column(length = 12, nullable = false)
+    @Column(length = 15, nullable = false)
+    @Nationalized
     private String name;
 
     public int getPowerPlantId() {

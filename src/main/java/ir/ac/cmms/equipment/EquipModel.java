@@ -2,7 +2,7 @@ package ir.ac.cmms.equipment;
 
 import ir.ac.cmms.equipGroup.EquipGroupModel;
 import ir.ac.cmms.powerPlant.PowerPlantModel;
-
+import ir.ac.cmms.unit.UnitModel;
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +19,10 @@ public class EquipModel {
     @ManyToOne
     @JoinColumn(name="equipmentGroup_id")
     private EquipGroupModel equipmentGroupModel;
+
+    @ManyToOne
+    @JoinColumn(name="unitId")
+    private UnitModel unitModel;
 
     public String getEquipId() {
         return equipId;
@@ -42,5 +46,13 @@ public class EquipModel {
 
     public void setEquipmentGroupModel(EquipGroupModel equipmentGroupModel) {
         this.equipmentGroupModel = equipmentGroupModel;
+    }
+
+    public UnitModel getUnitModel() {
+        return unitModel;
+    }
+
+    public void setUnitModel(UnitModel unitModel) {
+        this.unitModel = unitModel;
     }
 }

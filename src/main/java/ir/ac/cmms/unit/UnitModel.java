@@ -1,18 +1,18 @@
 package ir.ac.cmms.unit;
 
-import ir.ac.cmms.equipGroup.EquipGroupModel;
 import ir.ac.cmms.powerPlant.PowerPlantModel;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="unit")
 public class UnitModel {
 
     @Id
-    @Column(precision=2)
+    @Column(precision = 1)
     private int unitId;
+
+    @Column(length = 1, nullable = false)
+    private char type;
 
     @Column(length = 2, nullable = false)
     private String name;
@@ -21,16 +21,20 @@ public class UnitModel {
     @JoinColumn(name="powerPlant_id")
     private PowerPlantModel powerPlantModel;
 
-    @ManyToMany
-    @JoinTable(name="equipGroup_unit", joinColumns= @JoinColumn(name="unitId"), inverseJoinColumns = @JoinColumn(name="equipGroupId"))
-    private List<EquipGroupModel> equipGroups;
-
     public int getUnitId() {
         return unitId;
     }
 
     public void setUnitId(int unitId) {
         this.unitId = unitId;
+    }
+
+    public char getType() {
+        return type;
+    }
+
+    public void setType(char type) {
+        this.type = type;
     }
 
     public String getName() {
@@ -49,11 +53,4 @@ public class UnitModel {
         this.powerPlantModel = powerPlantModel;
     }
 
-    public List<EquipGroupModel> getEquipGroups() {
-        return equipGroups;
-    }
-
-    public void setEquipGroups(List<EquipGroupModel> equipGroups) {
-        this.equipGroups = equipGroups;
-    }
 }

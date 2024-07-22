@@ -36,4 +36,5 @@ public class EquipGroupModel {
     public void setName(String name) {
         this.name = name;
     }
+
 }

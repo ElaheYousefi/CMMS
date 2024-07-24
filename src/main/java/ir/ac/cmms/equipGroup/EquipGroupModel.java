@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @Table(name="equipmentGroup")
 public class EquipGroupModel {
-
     @Id
     @Column(precision = 2)
     private int equipGroupId;

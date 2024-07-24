@@ -1,8 +1,9 @@
 package ir.ac.cmms.equipment;
 
 import ir.ac.cmms.equipGroup.EquipGroupModel;
-import ir.ac.cmms.powerPlant.PowerPlantModel;
 import ir.ac.cmms.unit.UnitModel;
+import org.hibernate.annotations.Nationalized;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,8 +11,12 @@ import javax.persistence.*;
 public class EquipModel {
 
     @Id
+    @Column(length = 10)
+    private int equipId;
+
     @Column(length = 20)
-    private String equipId;
+    @Nationalized
+    private String code;
 
     @Column(length = 80, nullable = false)
     private String name;
@@ -24,12 +29,20 @@ public class EquipModel {
     @JoinColumn(name="unitId")
     private UnitModel unitModel;
 
-    public String getEquipId() {
+    public int getEquipId() {
         return equipId;
     }
 
-    public void setEquipId(String equipId) {
+    public void setEquipId(int equipId) {
         this.equipId = equipId;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {

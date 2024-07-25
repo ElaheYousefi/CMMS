@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/myCSS.css}"/>
+</head>
+<body>
+<header>
+    <br>
+    <br>
+    <br>
+    <div class="menuDiv">
+        <ul class="menu">
+            <li><a href="#home">پایش وضعیت</a></li>
+            <li><a href="#news">مدیرت منابع</a></li>
+            <li><a href="#contact">سیستم اعلام اخطار</a></li>
+            <li><a href="#about">انبارداری</a></li>
+        </ul>
+    </div>
+</header>
+<br>
+<div class="subDiv">
+    <ul class="horizontal-list">
+        <li><a href="#home"> اطلاعات پایه</a></li>
+        <li><a href="#home">مدیریت فعالیت ها</a></li>
+        <li><a href="#home">گزارش گیری</a></li>
+    </ul>
+</div>
+<br>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">کد تجهیز</th>
+            <th scope="col">نام تجهیز</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="equipment : ${equipments}">
+               <td th:text="${equipment.name}"></td>
+               <td th:text="${equipment.code}"></td>
+            </tr>
+        </tbody>
+</table>
+</body>
+</html>

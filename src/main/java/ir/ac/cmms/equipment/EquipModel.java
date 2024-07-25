@@ -15,10 +15,10 @@ public class EquipModel {
     private int equipId;
 
     @Column(length = 20)
-    @Nationalized
     private String code;
 
-    @Column(length = 80, nullable = false)
+    @Column(length = 150, nullable = false)
+    @Nationalized
     private String name;
 
     @ManyToOne
